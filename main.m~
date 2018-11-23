@@ -1,6 +1,7 @@
 %% PLOTS
-global a h_t X M
-%%
+global a
+
+
 [u, x_vec, t_vec] = gen_u(1, 0, 0);
 
 figure('Name', 'Animation of u')
@@ -23,7 +24,6 @@ for i =  1:length(noise_var)
     plot(t_vec((index_shift + 1):end), (1/2)*u(1, 1:(end-index_shift)))
     hold off
     title(sprintf('%.3f',noise_var(i)))
-    axis([0.0005, 0.003, 0, 0.5])
 end
 
 %% WITH 
@@ -39,7 +39,7 @@ end
 
 %% SMOOTH INSIGNAL
 
-[u, x_vec, t_vec] = gen_u(0.1, 0, 0, 100, 'sin');
+[u, x_vec, t_vec] = gen_u(0.8, 0, 0, 100, 'sin');
 
 figure('Name', 'Animation of u')
 for k = 1:(M+1)
